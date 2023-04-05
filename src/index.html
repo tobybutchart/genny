@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="version" content="1.0.0"/>
+		<title>[genny]</title>
+		<meta name="author" content="Toby Butchart"/>
+		<meta name="description" content="Minimalist generative soundscapes"/>
+        <meta name="subject" content="[genny]"/>
+		<meta name="application-name" content="[genny]"/>
+		<meta name="theme-color" content="#FFFFFF"/>
+		<meta property="og:locale" content="en"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="[genny]"/>
+		<!-- <meta property="og:image" content="img/preview-card-600x418.png"/> -->
+		<meta property="og:image:alt" content="[genny]"/>
+		<meta property="og:description" content="Minimalist generative soundscapes"/>
+		<meta property="og:site_name" content="[genny]"/>
+		<meta property="og:url" content="https://tobybutchart.github.io/genny/src/index.html"/>
+		<meta property="article:author" content="Toby Butchart"/>
+		<meta name="twitter:url" content="https://tobybutchart.github.io/genny/src/index.html"/>
+		<meta name="twitter:title" content="[genny]"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:description" content="Minimalist generative soundscapes"/>
+		<!-- <meta name="twitter:image" content="img/preview-card-600x418.png"/> -->
+		<meta name="twitter:image:alt" content="[genny]"/>
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"/> -->
+        <!-- <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/> -->
+        <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"/> -->
+        <!-- <link rel="manifest" crossorigin="use-credentials" href="manifest.json"/>  -->
+		<link rel="icon" type="image/x-icon" href="favicon.ico"> 
+        <!-- <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#FFFFFF"/> -->
+        <meta name="msapplication-TileColor" content="#FFFFFF"/>
+        <meta name="theme-color" content="#FFFFFF"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Gayathri"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+		<link rel="stylesheet" href="css/style.min.css?v=1.0.0"/>
+		<link rel="stylesheet" href="msg/css/msg.min.css?v=1.0.0"/>
+	</head>
+    <body>
+        <div class="nav-bar">
+			<button>[genny]</button>
+			<button class="nav-bar-about" onclick="showAbout()">[&nbsp;?&nbsp;]</button>
+        </div>
+		<div class="container-genny">
+			<div id="col-genny-airport" class="col-genny"></div>
+			<div id="col-genny-blip" class="col-genny"></div>
+			<div id="col-genny-lucier" class="col-genny"></div>
+			<!-- <div id="col-genny-gran" class="col-genny"></div> -->
+			<div id="col-genny-drmbit" class="col-genny"></div>
+		</div>
+		<script type="text/javascript" src="msg/js/msg.min.js?v=1.0.0"></script>
+		<script type="text/javascript" src="js/simple-reverb.js?v=1.0.0"></script>
+        <script type="text/javascript" src="js/genny.js?v=1.0.0"></script>
+		<script type="text/javascript" src="js/airport.js?v=1.0.0"></script>
+		<script type="text/javascript" src="js/blip.js?v=1.0.0"></script>
+		<script type="text/javascript" src="js/lucier.js?v=1.0.0"></script>
+		<!-- <script type="text/javascript" src="js/gran.js?v=1.0.0"></script> -->
+		<script type="text/javascript" src="js/drmbit.js?v=1.0.0"></script>
+		<script type="text/javascript">
+			/* global styles for msg box */
+			MSG_HEADER_FONT = "Gayathri";
+			MSG_CONTENT_FONT = "Gayathri";
+
+			MSG_HEADER_FONT_COLOUR = "#000000";
+		    MSG_CONTENT_FONT_COLOUR = "#000000";
+
+			MSG_CONTENT_MAX_WIDTH = "586px";
+
+			MSG_SUCCESS_COLOUR = "#FFFFFF";
+			MSG_INFO_COLOUR = "#FFFFFF";
+			MSG_WARNING_COLOUR = "#FFFFFF";
+			MSG_ERROR_COLOUR = "#FFFFFF";
+			MSG_CONFIRM_COLOUR = "#FFFFFF";
+			MSG_INPUT_COLOUR = "#FFFFFF";
+			MSG_CUSTOM_COLOUR = "#FFFFFF";
+
+			MSG_TEXT_OK = "[ok]";
+			MSG_TEXT_CONFIRM_OK = "[ok]";
+			MSG_TEXT_INFO = "[info]";
+			MSG_TEXT_ERROR = "[error]";
+			MSG_USE_ICONS = false;
+
+			a = new Airport();
+			b = new Blip();
+			l = new Lucier();
+			// g = new Gran();
+			d = new Drmbit();
+
+			function getMeta(name) {
+			    const metas = document.getElementsByTagName('meta');
+
+			    for (let i = 0; i < metas.length; i++) {
+			        if (metas[i].getAttribute('name') === name) {
+			            return metas[i].getAttribute('content');
+			        }
+			    }
+
+			    return '';
+			}
+
+			function showAbout() {
+				const description = getMeta('description');
+				const version = getMeta('version');
+				const year = new Date().getFullYear();
+				const about = `<p>${description}</p><br><br><p style="text-align: left">[a]&nbsp;Toby Butchart<br>[v]&nbsp;${version}<br>[c]&nbsp;${year}</p>`;
+
+				const max = MSG_CONTENT_MAX_WIDTH;
+				MSG_CONTENT_MAX_WIDTH = "386px";
+				showMsg('[about]', about);
+				MSG_CONTENT_MAX_WIDTH = max;
+			}
+		</script>
+    </body>
+</html>

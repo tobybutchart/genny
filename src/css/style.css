@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: Gayathri;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 98%;
+    height: 20px;
+    background: white;
+    outline: none;
+    /* opacity: 0.5; */
+    /* -webkit-transition: .2s;
+    transition: opacity .2s; */
+    border: 1px solid #767676;
+    //border-radius: 25px;
+}
+
+input[type=range]:hover {
+    opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 8px;
+    height: 8px;
+    background: black;
+    cursor: pointer;
+    /* opacity: 0.7; */
+    border-radius: 25px;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    background: black;
+    cursor: pointer;
+    /* opacity: 0.7; */
+    border-radius: 25px;
+}
+
+input[type=number] {
+    /* width: 100%; */
+}
+
+input[type=file] {
+    /* width: 100%; */
+    display: none;
+}
+
+select {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    padding: 25px;
+}
+
+button {
+    font-family: Gayathri;
+    padding: 5px;
+    font-weight: bold;
+    font-size: x-large;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+.nav-bar {
+    text-align: center;
+    overflow: hidden;
+}
+
+.nav-bar a {
+    float: right;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    text-decoration: none;
+    font-size: 36px;
+}
+
+.nav-bar button {
+    padding: 36px;
+    font-size: 36px;
+}
+
+.nav-bar-about {
+    float: right;
+    position: absolute;
+    right: 0px;
+}
+
+.nav-bar a:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav-bar a.nav-bar-active {
+    background-color: white;
+    color: black;
+}
+
+.container-genny {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.div-genny {
+    width: 75%;
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.btn-container-genny {
+    width: 100%;
+    text-align: center;
+}
+
+.col-genny {
+    width: 100%;
+    /* height: 500px; */
+    float: left;
+    position: relative;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .col-genny {
+        width: 50%;
+    }
+
+    .div-genny {
+        height: 450px;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-genny {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-genny {
+        width: 33%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .col-genny {
+        width: 25%;
+    }
+}
