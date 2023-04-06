@@ -19,7 +19,9 @@
 Minimalist generative soundscapes 
 
 <p align="center">
-    <img src="res/Snips.png" alt="Snips">
+    <img src="res/screenshot.png" alt="Screenshot">
 </p> 
 
-Experimental ideas using Web Audio API
+Experimental ideas using Web Audio API.  
+
+Change the parameters and hit start...
